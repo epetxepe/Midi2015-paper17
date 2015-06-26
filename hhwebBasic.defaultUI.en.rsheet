@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen SCHSchema="http://openurc.org/ns/rsheet-2"?>
+<ResSheet
+    about="http://example.com/hhweb/hhwebBasic.gsheet.en.rsheet"
+    xmlns="http://openurc.org/ns/rsheet-2"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openurc.org/ns/rsheet-2 http://openurc.org/ns/rsheet-2 http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd">
+    <dcterms:conformsTo>http://openurc.org/ns/rsheet-2/isoiec24752-5-2013</dcterms:conformsTo>
+    <scents>
+        <forDomain>http://example.com/hhweb/hhwebBasic</forDomain>
+        <forDomain>http://example.com/hhweb/hhwebBasic.gsheet</forDomain>
+        <forLang>en</forLang>
+        <dc:type>Text</dc:type>
+        <dc:type>Image</dc:type>
+    </scents>
+    <resItems>
+        <!--Text resources for UIS labels-->
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#breatheRate_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Breathe Rate</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#breatheRate"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#weight_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Weight</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#weight"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#bloodPressureHighValue_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Blood presure (High)</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#bloodPressureHighValue"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#bloodPressureLowValue_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Blood presure (Low)</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#bloodPressureLowValue"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#pulse_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Pulse</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#pulse"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#SPO2_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Oxygen level in blood</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#SPO2"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#temperature_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Temperature</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#temperature"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>        
+        <AResDesc about="http://example.com/hhweb/hhwebBasic#addVitalConstants_label_1">
+            <dc:type>Text</dc:type>
+            <content xml:lang="en">Add</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#addVitalConstants"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>      
+        <!--Text resources for gsheet group labels-->
+        <AResDesc about="http://example.com/hhweb/hhwebBasic.gsheet#mainGroup_label_1">
+            <dc:type>Text</dc:type>            
+            <content xml:lang="en">Vital Constant Measurement</content>
+            <useFor>
+                <Context>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic.gsheet#mainGroup"/>
+                    <role resource="http://openurc.org/ns/res#label"/>
+                    <forLang>en</forLang>
+                </Context>
+            </useFor>
+        </AResDesc>      
+    </resItems>
+</ResSheet>

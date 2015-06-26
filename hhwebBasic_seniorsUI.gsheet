@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen SCHSchema="http://openurc.org/ns/gsheet-2"?>
+<GrpSheet about="http://example.com/hhweb/hhwebBasic.gsheet"
+    xmlns="http://openurc.org/ns/gsheet-2"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openurc.org/ns/gsheet-2 http://openurc.org/ns/gsheet-2 http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd http://purl.org/dc/terms/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dcterms.xsd">
+    <dcterms:conformsTo>http://openurc.org/ns/gsheet-2/isoiec24752-5-2013</dcterms:conformsTo>
+    <scents>
+        <forDomain>http://example.com/hhweb/hhwebBasic</forDomain>
+        <forLang>en</forLang>
+    </scents>
+    <grpItems>
+        <Grouping about="http://example.com/hhweb/hhwebBasic.gsheet#grouping">
+            <forDomain>http://example.com/hhweb/hhwebBasic</forDomain>
+            <mainGroup resource="http://example.com/hhweb/hhwebBasic.gsheet#mainGroup"/>
+            <groups>
+                <Group about="http://example.com/hhweb/hhwebBasic.gsheet#mainGroup">
+                    <cohesion>normal</cohesion>                    
+                    <groupRef resource="http://example.com/hhweb/hhwebBasic.gsheet#Heart"/>
+                    <groupRef resource="http://example.com/hhweb/hhwebBasic.gsheet#Respiration"/>
+                    <groupRef resource="http://example.com/hhweb/hhwebBasic.gsheet#Generic"/>
+                </Group>
+                <Group about="http://example.com/hhweb/hhwebBasic.gsheet#Heart">
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#bloodPressureHighValue"/>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#bloodPressureLowValue"/>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#pulse"/>
+                </Group>
+                <Group about="http://example.com/hhweb/hhwebBasic.gsheet#Respiration">
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#breatheRate"/>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#SPO2"/>
+                </Group>
+                <Group about="http://example.com/hhweb/hhwebBasic.gsheet#Generic">
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#weight"/>
+                    <eltRef resource="http://example.com/hhweb/hhwebBasic#temperature"/>
+                </Group>
+            </groups>
+        </Grouping>
+    </grpItems>
+</GrpSheet>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions targetNamespace="http://example.com/hhweb"    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"    xmlns:wsdl-urc="http://openurc.org/ns/wsdl-urc"
+    xmlns:tns="http://example.com/hhweb"    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"    xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"    xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"     xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    xmlns:dc="http://purl.org/dc/elements/1.1/"    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:uis="http://openurc.org/ns/uisocketdesc-2"    xsi:schemaLocation="http://purl.org/dc/elements/1.1/ http://dublincore.org/schemas/xmls/qdc/2006/01/06/dc.xsd
+        http://openurc.org/ns/uisocketdesc-2 http://openurc.org/ns/uisocketdesc-2  http://openurc.org/ns/wsdl-urc http://openurc.org/ns/wsdl-urc">    
+    <wsdl:documentation>        
+        <!-- Mapping: target@hidden = documentation.wsdl-urc:hidden -->
+        <wsdl-urc:hidden>false</wsdl-urc:hidden> 
+        <dcterms:conformsTo>http://openurc.org/ns/wsdl-urc/isoiec24752-6-2013</dcterms:conformsTo>
+        <dcterms:modified>2015-03-25</dcterms:modified>
+        <dc:creator>Gorka Epelde, Vicomtech-ik4</dc:creator>
+        <dc:publisher>http://example.com</dc:publisher> 
+        <wsdl-urc:grpSheet about="http://example.com/hhweb/hhwebBasic_defaultUI.gsheet">
+            <dcterms:conformsTo>http://openurc.org/ns/gsheet-2/isoiec24752-5-2013</dcterms:conformsTo>
+            <wsdl-urc:retrieveFrom>hhwebBasic_defaultUI.gsheet</wsdl-urc:retrieveFrom>
+            <wsdl-urc:scents>
+                <wsdl-urc:forDomain>http://example.com/hhweb/hhwebBasic</wsdl-urc:forDomain>
+                <wsdl-urc:forLang>en</wsdl-urc:forLang>
+            </wsdl-urc:scents>
+        </wsdl-urc:grpSheet>        
+        <wsdl-urc:resSheet about="http://example.com/hhweb/hhwebBasic.defaultUI.en.rsheet">
+            <dcterms:conformsTo>http://openurc.org/ns/res/isoiec24752-5-2013</dcterms:conformsTo>           
+            <wsdl-urc:retrieveFrom>hhwebBasic.defaultUI.en.rsheet</wsdl-urc:retrieveFrom>
+            <wsdl-urc:scents>
+                <wsdl-urc:forDomain>http://example.com/hhweb/hhwebBasic.gsheet</wsdl-urc:forDomain>
+                <wsdl-urc:forDomain>http://example.com/hhweb/hhwebBasic</wsdl-urc:forDomain>                
+                <wsdl-urc:forLang>en</wsdl-urc:forLang>
+                <wsdl-urc:role>http://openurc.org/ns/res#label</wsdl-urc:role>
+                <dc:type>Text</dc:type>
+                <dc:type>Image</dc:type>
+            </wsdl-urc:scents>
+        </wsdl-urc:resSheet>       
+    </wsdl:documentation>
+    <wsdl:types>
+        <xs:schema targetNamespace="http://example.com/hhweb">
+            <xs:element name="targetInstanceId" type="xs:string" />
+            <xs:element name="confirmCancel" type="xs:string" />
+            <xs:element name="notifyStatus"  type="xs:string" />
+            <xs:element name="requestedTimeout" type="xs:time" />
+            <xs:element name="grantedTimeout" type="xs:time" />
+            <xs:element name="resItems" type="xs:string" />
+            <xs:element name="getOperations" type="xs:string" />            
+            <!-- Types definition for later use           -->                          
+            <xs:element name="breatheRate" type="xs:float" />
+            <xs:element name="weight" type="xs:float" />
+            <xs:element name="bloodPressureHighValue" type="xs:float" />
+            <xs:element name="bloodPressureLowValue" type="xs:float" />
+            <xs:element name="pulse" type="xs:float" />
+            <xs:element name="SPO2" type="xs:float" />
+            <xs:element name="temperature" type="xs:float" />
+            <xs:element name="addResultMessage" type="xs:string" />
+    </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="empty" />
+    <wsdl:message name="targetInstanceId">
+        <wsdl:part name="targetInstanceId" element="tns:targetInstanceId" />
+    </wsdl:message>
+    <wsdl:message name="getOperations">
+        <wsdl:part name="getOperations" element="tns:getOperations" />
+    </wsdl:message>
+    <wsdl:message name="resourceDescriptions">
+        <wsdl:part name="resItems" element="tns:resItems" />
+    </wsdl:message>
+    <wsdl:message name="breatheRate">
+        <wsdl:part name="breatheRate" element="tns:breatheRate" />
+    </wsdl:message>
+    <wsdl:message name="addResultMessage">
+        <wsdl:part name="addResultMessage" element="tns:addResultMessage" />
+    </wsdl:message>
+    <!-- Add for other socket elements -->
+    <wsdl:portType name="_target">	
+        <wsdl:operation name="getTargetInstanceId">
+            <dc:description xml:lang="en">Get globally unique identifier for the target instance.</dc:description>
+            <wsdl:input message="tns:empty" />
+            <wsdl:output message="tns:targetInstanceId" />
+        </wsdl:operation>
+    </wsdl:portType>    
+    <wsdl:portType name="socket">
+        <wsdl:documentation>
+            <dcterms:conformsTo>http://openurc.org/ns/wsdl-urc/isoiec24752-6-2013</dcterms:conformsTo>
+            <dcterms:modified>2015-03-23</dcterms:modified>
+            <dc:creator>Gorka Epelde</dc:creator>
+        </wsdl:documentation>  
+        <wsdl:operation name="getUpdates">            
+            <wsdl:input message="tns:empty" />
+            <wsdl:output message="tns:getOperations" />            
+        </wsdl:operation>
+        <!-- Operations for variable with id="breatheRate" -->        
+        <wsdl:operation name="get.breatheRate"> 
+            <wsdl:input message="tns:empty" />
+            <wsdl:output message="tns:breatheRate" />
+        </wsdl:operation>        
+        <wsdl:operation name="set.breatheRate">
+            <wsdl:input message="tns:breatheRate" />
+            <wsdl:output message="tns:breatheRate" />
+        </wsdl:operation>   
+        <!-- Operation for command with id="addVitalConstants" -->        
+        <wsdl:operation name="cmd.addVitalConstants">           
+            <wsdl:input message="tns:breatheRate" />
+            <wsdl:input message="tns:weight" />
+            <wsdl:input message="tns:bloodPressureHighValue" />
+            <wsdl:input message="tns:bloodPressureLowValue" />
+            <wsdl:input message="tns:pulse" />
+            <wsdl:input message="tns:SPO2" />
+            <wsdl:input message="tns:temperature" />            
+        </wsdl:operation> 
+    </wsdl:portType>    
+    <wsdl:binding name="targetSoapBinding" type="tns:_target">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="getTargetInstanceId">
+            <soap:operation soapAction="http://example.com/hhweb/_target/getTargetInstanceId" />
+            <wsdl:input><soap:body use="literal" /></wsdl:input>
+            <wsdl:output><soap:body use="literal" /></wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="socketSoapBinding" type="tns:socket">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />        
+        <wsdl:operation name="getUpdates">
+            <soap:operation soapAction="http://example.com/hhweb/socket/getUpdates" />
+            <wsdl:input><soap:body use="literal" /> </wsdl:input>
+            <wsdl:output><soap:body use="literal" /></wsdl:output>
+        </wsdl:operation>        
+        <wsdl:operation name="get.breatheRate">
+            <soap:operation soapAction="http://example.com/hhweb/socket/get.breatheRate" />
+            <wsdl:input><soap:body use="literal" /></wsdl:input>
+            <wsdl:output><soap:body use="literal" /></wsdl:output>
+        </wsdl:operation>        
+        <wsdl:operation name="set.breatheRate">
+            <soap:operation soapAction="http://example.com/hhweb/socket/set.breatheRate" />
+            <wsdl:input><soap:body use="literal" /></wsdl:input>
+            <wsdl:output><soap:body use="literal" /></wsdl:output>
+        </wsdl:operation> 
+        <wsdl:operation name="cmd.addVitalConstants">
+            <soap:operation soapAction="http://example.com/hhweb/socket/cmd.resetProgram" />
+            <wsdl:input><soap:body use="literal" /></wsdl:input>
+            <wsdl:output><soap:body use="literal" /></wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="targetService">
+        <wsdl:port name="_target" binding="tns:targetSoapBinding">
+            <soap:address location="http://example.com/hhweb/_target" />
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="socketService">
+        <wsdl:port name="socket" binding="tns:socketSoapBinding">
+            <soap:address location="http://example.com/hhweb/socket" />
+        </wsdl:port>
+    </wsdl:service>    
+</wsdl:definitions>
